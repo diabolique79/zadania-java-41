@@ -1,35 +1,61 @@
 package com.homework.random.model;
 
-import java.util.Iterator;
-import java.util.Random;
-import java.util.TreeSet;
+import java.util.*;
 
-public  class Sets {
+public class Sets {
 
-    public  Object min(TreeSet treeSet) {
+    public Integer min(TreeSet<Integer> treeSet) {
 
         return treeSet.first();
     }
 
-    public Object max(TreeSet treeSet) {
+    public Integer max(TreeSet<Integer> treeSet) {
 
         return treeSet.last();
     }
 
-    public TreeSet randomSet(TreeSet treeSet) {
+    public TreeSet<Integer> randomSet(TreeSet<Integer> treeSet) {
 
         Random random = new Random();
+        int a;
+
+        List<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < 100; i++) {
+            a = random.nextInt(1001);
+            list.add(a);
+        }
 
         for (int i = 0; i <= 50; i++) {
-
-
-            treeSet.add(random.nextInt(1001));
-
+            treeSet.add(list.get(i));
         }
+
         return treeSet;
     }
 
-    public Integer average(TreeSet treeSet) {
+
+    //metoda, którą sprawdzam sobie wielkość listy.
+    public void rand(TreeSet<Integer> treeSet) {
+
+        Random random = new Random();
+        int a;
+
+        List<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < 100; i++) {
+            a = random.nextInt(1001);
+            list.add(a);
+        }
+        int i = 0;
+        while (treeSet.size() == 50) {
+            treeSet.add(list.get(i));
+        }
+
+        System.out.println(list.size());
+
+    }
+
+    public Integer average(TreeSet<Integer> treeSet) {
 
         Integer average = 0;
         Iterator<Integer> it = treeSet.iterator();
@@ -37,7 +63,7 @@ public  class Sets {
 
             Integer sum = 0;
 
-            for (Object secik : treeSet) {
+            for (Integer secik : treeSet) {
                 sum = sum + it.next();
 
             }
@@ -48,7 +74,7 @@ public  class Sets {
     }
 
 
-    }
+}
 
 
 
