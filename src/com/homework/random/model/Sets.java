@@ -21,10 +21,12 @@ public class Sets {
 
         List<Integer> list = new ArrayList<>();
 
+
         for (int i = 0; i < 100; i++) {
             a = random.nextInt(1001);
             list.add(a);
         }
+        Collections.sort(list);
 
         for (int i = 0; i <= 50; i++) {
             treeSet.add(list.get(i));
@@ -46,11 +48,12 @@ public class Sets {
             a = random.nextInt(1001);
             list.add(a);
         }
+        Collections.sort(list);
+
         int i = 0;
         while (treeSet.size() == 50) {
             treeSet.add(list.get(i));
         }
-
         System.out.println(list.size());
 
     }
