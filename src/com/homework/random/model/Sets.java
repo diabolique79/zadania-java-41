@@ -28,7 +28,7 @@ public class Sets {
         }
         Collections.sort(list);
 
-        for (int i = 0; i <= 50; i++) {
+        for (int i = 0; treeSet.size() < 50; i++) {
             treeSet.add(list.get(i));
         }
 
